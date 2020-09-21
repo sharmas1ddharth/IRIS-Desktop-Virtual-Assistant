@@ -10,6 +10,7 @@ import random
 from joke.jokes import *
 from joke.quotes import  *
 import winsound
+from batteryNotification import batteryNotifier
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -88,15 +89,8 @@ if __name__ == "__main__":
             webbrowser.open(f"https://www.google.com/search?q={google_query}")
             print("Opening google")
         
-        elif 'joke' or 'jokes' in query:
-            random_joke = random.choice([geek, icanhazdad, chucknorris, icndb])()
-            print(random_joke)
-            speak(random_joke)
-            winsound.PlaySound('joke.wav', winsound.SND_FILENAME)
         
-        elif 'quotes' or 'quote' in query:
-            today_quote = stormconsultancy()
-            print(today_quote)
-            speak(today_quote)
+        elif 'battery' or 'remaining battery' in query:
+            batteryNotifier()
         
             
