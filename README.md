@@ -1,1 +1,1 @@
-# python-virtual-assistant
+# IRIS - Desktop Virtual Assistant
